@@ -10,7 +10,11 @@ test("verifithe error in the page", async ({page}) => {
      const errormessage = await page.locator('xpath=//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p').textContent()
     
      console.log(errormessage)
-     await page.close()
+    
+     expect(errormessage.includes("Invalid credentials")).toBeTruthy()
+
+     expect(errormessage==="Invalid credentials").toBeTruthy()
+     
     
 })  
 
